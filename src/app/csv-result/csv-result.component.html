@@ -2,3 +2,10 @@
   csv-Parser works!
 </p>
 <app-csv-reader (csvFileChanged)="onHearingChanges($event)">Loading csv reader...</app-csv-reader>
+<div *ngIf="csvValues">
+  <h1>Csv Parsing results</h1>
+  <div *ngFor="let row of csvValues">row
+    <h5 *ngFor="let cell of row">{{cell}}</h5>
+  </div>
+  
+</div>
