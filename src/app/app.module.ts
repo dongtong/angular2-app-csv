@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { CsvReaderComponent } from './csv-reader/csv-reader.component';
+import { CsvResultComponent } from './csv-result/csv-result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CsvReaderComponent
+    CsvReaderComponent,
+    CsvResultComponent
   ],
   imports: [
     BrowserModule,

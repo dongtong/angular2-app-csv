@@ -9,9 +9,9 @@ export class CsvReaderComponent {
   private _file: File;
   private _fileName: string;
 
-  @Output() fileContent: string[][];
+  fileContent: string[][];
 
-  csvFileChanged: EventEmitter<string[][]> = new EventEmitter<string[][]>();
+  @Output() csvFileChanged: EventEmitter<string[][]> = new EventEmitter<string[][]>();
   csvParser: CsvParser = new CsvParser();
 
   public fileChangeListener($event: any): void {
