@@ -8,8 +8,8 @@
     <tr>
       <th *ngFor="let head of csvHeaders">{{head}}</th>
     </tr>
-    <tr *ngFor="let row of csvValues">
-      <td *ngFor="let cell of row">{{cell}}</td>
+    <tr *ngFor="let row of processedVals">
+      <td *ngFor="let cell of row" [style.background-color]="cell.colorValue">{{cell.colorValue}} {{cell.textValue}}</td>
     </tr>
   </table>
 
