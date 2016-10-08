@@ -7,5 +7,5 @@ import{ CsvReaderComponent} from './csv-reader/csv-reader.component';
 
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Csv parser app';
 }

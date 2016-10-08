@@ -13,9 +13,11 @@ export class CsvResultComponent implements OnChanges {
     console.log("Things changed");
   }
   @Input() csvValues: string[][]
+  @Input() csvHeaders: string[]
   onHearingChanges(payload: string[][]): void {
     console.log("changes heared, length in Parent:" + payload.length);
+    this.csvHeaders = payload.shift()
     this.csvValues = payload;
-    
+
   }
 }

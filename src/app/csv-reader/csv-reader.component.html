@@ -3,9 +3,9 @@
 </p>
 <form class="form-inline" method="post" enctype="multipart/form-data">
   <!--//action="upload.php"-->
-  <div class="form-group">
-    <label>Select a CSV file to upload:</label>
-    <input #fileInput type="file" name="File Upload" (change)="fileChangeListener()" accept=".csv" />
-    <button class="btn btn-default">Click!</button>
+  <div class="form-group has-feedback">
+    <label class="control-label">Input CSV file</label>
+    <input class="form-control" type="file" name="File Upload" (change)="fileChangeListener()" accept=".csv" />
+    <i *ngIf="waiting" class="form-control-feedback fa fa-spinner fa-spin"></i>
   </div>
 </form>

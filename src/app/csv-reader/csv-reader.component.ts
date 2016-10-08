@@ -10,6 +10,7 @@ export class CsvReaderComponent {
   private _fileName: string;
 
   fileContent: string[][];
+  waiting: boolean = false;
 
   @Output() csvFileChanged: EventEmitter<string[][]> = new EventEmitter<string[][]>();
   csvParser: CsvParser = new CsvParser();
@@ -20,19 +21,17 @@ export class CsvReaderComponent {
     let toBeValidated: any = event.srcElement.files[0];
 
     // Validate the file
-    if (toBeValidated.type != "application/vnd.ms-excel" 
-    || !toBeValidated.name.endsWith(".csv")) {
+    if (toBeValidated.type != "application/vnd.ms-excel"
+      || !toBeValidated.name.endsWith(".csv")) {
       console.error("Invalid file type");
       return;
     }
-
+    this.waiting = true;
     this._file = toBeValidated;
     this._fileName = this._file.name;
     console.log("Attached file changed:" + this._fileName);
     this.loadFile(this._file);
   }
-
-
 
   loadFile(inputFile: File) {
     if (!inputFile) {
@@ -51,6 +50,8 @@ export class CsvReaderComponent {
       this.fileContent = CsvParser.CsvToArray(data);
       this.csvFileChanged.emit(this.fileContent);
       console.log("Fired parse complete event");
+      
+      this.waiting = false;
 
       if (data && data.length > 0) {
         console.log("Imported -" + data.length + "- bytes successfully!,rows:" + this.fileContent.length);

@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CsvReaderComponent } from './csv-reader/csv-reader.component';
 import { CsvResultComponent } from './csv-result/csv-result.component';
-
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +16,8 @@ import { CsvResultComponent } from './csv-result/csv-result.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]
