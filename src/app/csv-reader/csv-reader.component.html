@@ -1,0 +1,11 @@
+<p>
+  csv-reader works!
+</p>
+<form class="form-inline" method="post" enctype="multipart/form-data">
+  <!--//action="upload.php"-->
+  <div class="form-group">
+    <label>Select a CSV file to upload:</label>
+    <input #fileInput type="file" name="File Upload" (change)="fileChangeListener()" accept=".csv" />
+    <button class="btn btn-default">Click!</button>
+  </div>
+</form>
