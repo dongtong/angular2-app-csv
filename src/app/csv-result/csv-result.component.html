@@ -4,14 +4,15 @@
 <app-csv-reader (csvFileChanged)="onHearingChanges($event)">Loading csv reader...</app-csv-reader>
 <div *ngIf="csvValues && csvHeaders">
   <h1>Csv Parsing results</h1>
-  <table class="table table-responsive table-bordered table-hover">
-    <tr>
-      <th *ngFor="let head of csvHeaders">{{head}}</th>
-    </tr>
-    <tr *ngFor="let row of processedVals">
-      <td *ngFor="let cell of row" [style.background-color]="cell.colorValue">{{cell.colorValue}} {{cell.textValue}}</td>
-    </tr>
-  </table>
-
+  <div style="overflow:scroll;">
+    <table class="table table-responsive table-bordered table-hover">
+      <tr>
+        <th *ngFor="let head of csvHeaders">{{head}}</th>
+      </tr>
+      <tr *ngFor="let row of processedVals">
+        <td style="vertical-align:bottom" *ngFor="let cell of row" [style.background-color]="cell.colorValue" [style.height.px]="70" align="center">{{cell.textValue}}</td>
+      </tr>
+    </table>
+  </div>
 
 </div>
