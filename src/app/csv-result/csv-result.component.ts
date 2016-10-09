@@ -14,9 +14,9 @@ export class CsvResultComponent implements OnChanges {
   ngOnChanges() {
     console.log("Things changed");
   }
-  @Input() processedVals: TableCell[][];
-  @Input() csvValues: string[][]
-  @Input() csvHeaders: string[]
+  processedVals: TableCell[][];
+  csvValues: string[][]
+  csvHeaders: string[]
 
   onHearingChanges(payload: string[][]): void {
     console.log("changes heared, length in Parent:" + payload.length);
